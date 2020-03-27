@@ -35,7 +35,6 @@ external make:
                           | `imagebutton
                         ]
                           =?,
-    ~accessibilityStates: array(AccessibilityState.t)=?,
     ~accessibilityTraits: array(AccessibilityTrait.t)=?,
     ~delayLongPress: int=?,
     ~delayPressIn: int=?,
@@ -51,7 +50,7 @@ external make:
     ~testID: string=?,
     ~touchSoundDisabled: bool=?,
     ~children: React.element=?,
-    // escape hatches for react-native web:
+    // React Native Web Props
     ~rel: [@bs.string] [
             | `alternate
             | `author

@@ -48,7 +48,6 @@ external make:
                           | `region
                         ]
                           =?,
-    ~accessibilityStates: array(AccessibilityState.t)=?,
     ~accessibilityTraits: array(AccessibilityTrait.t)=?,
     ~accessibilityViewIsModal: bool=?,
     ~accessible: bool=?,
@@ -93,7 +92,15 @@ external make:
     ~shouldRasterizeIOS: bool=?,
     ~style: Style.t=?,
     ~testID: string=?,
-    ~children: React.element=?
+    ~children: React.element=?,
+    // React Native Web Props
+    ~onMouseDown: ReactEvent.Mouse.t => unit=?,
+    ~onMouseEnter: ReactEvent.Mouse.t => unit=?,
+    ~onMouseLeave: ReactEvent.Mouse.t => unit=?,
+    ~onMouseMove: ReactEvent.Mouse.t => unit=?,
+    ~onMouseOver: ReactEvent.Mouse.t => unit=?,
+    ~onMouseOut: ReactEvent.Mouse.t => unit=?,
+    ~onMouseUp: ReactEvent.Mouse.t => unit=?
   ) =>
   React.element =
   "View";
