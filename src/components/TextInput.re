@@ -8,20 +8,6 @@ type changeEvent =
     "text": string,
   });
 
-type textInputEvent =
-  Event.syntheticEvent({
-    .
-    "eventCount": int,
-    "previousText": string,
-    "range": {
-      .
-      "start": int,
-      "_end": int,
-    },
-    "target": int,
-    "text": string,
-  });
-
 type editingEvent =
   Event.syntheticEvent({
     .
@@ -164,7 +150,6 @@ external make:
     ~onScroll: scrollEvent => unit=?,
     ~onSelectionChange: selectionChangeEvent => unit=?,
     ~onSubmitEditing: editingEvent => unit=?,
-    ~onTextInput: textInputEvent => unit=?,
     ~placeholder: string=?,
     ~placeholderTextColor: Color.t=?,
     ~returnKeyLabel: string=?,
@@ -189,8 +174,8 @@ external make:
     ~secureTextEntry: bool=?,
     ~selection: selection=?,
     ~selectionColor: Color.t=?,
-    ~selectionState: 'documentSelectionState=?, // TODO
     ~selectTextOnFocus: bool=?,
+    ~showSoftInputOnFocus: bool=?,
     ~spellCheck: bool=?,
     ~textBreakStrategy: [@bs.string] [ | `balanced | `highQuality | `simple]=?,
     ~textContentType: [@bs.string] [
@@ -253,7 +238,9 @@ external make:
                           | `imagebutton
                         ]
                           =?,
+    ~accessibilityState: Accessibility.state=?,
     ~accessibilityTraits: array(AccessibilityTrait.t)=?,
+    ~accessibilityValue: Accessibility.value=?,
     ~accessibilityViewIsModal: bool=?,
     ~accessible: bool=?,
     ~collapsable: bool=?,
