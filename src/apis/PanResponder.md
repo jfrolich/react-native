@@ -24,17 +24,16 @@ Responder System\_
 
 ```reason
 type gestureState = {
-  .
-  "stateID": float,
-  "moveX": float,
-  "moveY": float,
-  "x0": float,
-  "y0": float,
-  "dx": float,
-  "dy": float,
-  "vx": float,
-  "vy": float,
-  "numberActiveTouches": int,
+  stateID: float,
+  moveX: float,
+  moveY: float,
+  x0: float,
+  y0: float,
+  dx: float,
+  dy: float,
+  vx: float,
+  vy: float,
+  numberActiveTouches: int,
 }
 ```
 
@@ -254,8 +253,8 @@ Then, the custom `PanResponder` can be used as below:
 ```reason
 open ReactNative;
 
-let windowHeight = Dimensions.get(`window)##height;
-let windowWidth = Dimensions.get(`window)##width;
+let windowHeight = Dimensions.get(`window).height;
+let windowWidth = Dimensions.get(`window).width;
 
 let containerStyle =
   Style.(

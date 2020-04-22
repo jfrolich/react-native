@@ -1,10 +1,6 @@
 type element;
 type ref = React.Ref.t(Js.nullable(element));
 
-include WebViewMethods.Make({
-  type t = element;
-});
-
-include NativeMethods.Make({
+include VirtualizedSectionListMethods.Make({
   type t = element;
 });
